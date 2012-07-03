@@ -84,3 +84,5 @@ I intend to implement this in the future, if I have the motivation
 * Run commands with button combinations (1+2 for example)
 * A nice GUI to query the button IDs and make crafting the mapping files easier
 * Send events through the network with OSC
+* A button combination to shut the program down
+* Minimize to tray
