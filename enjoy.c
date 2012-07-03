@@ -92,7 +92,7 @@ void loadLuaFile(lua_State* L, const char* filename)
 
 }
 
-// returns the joy index or -1 in case of error
+/* returns the joy index or -1 in case of error */
 int selectJoy(const char* index_string) {
 	int index,ret;
 
@@ -116,7 +116,7 @@ void printJoyInfo()
 
 int main(int argc, char** argv) {
 
-	// TODO print usage and parameters
+	/* TODO print usage and parameters */
 
 	init();
 
@@ -134,10 +134,10 @@ int main(int argc, char** argv) {
 	openJoystick(selected);
 	lua_State *L = openLua();
 
-	// TODO have core.lua as a precompiled binary
+	/* TODO have core.lua as a precompiled binary */
 	loadLuaFile(L,"core.lua");
 
-	// lua_register(L, "__send_key_event" , lua_send_key_event );
+	/* lua_register(L, "__send_key_event" , lua_send_key_event ); */
 
 	handleEvents(L);
 

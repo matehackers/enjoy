@@ -35,7 +35,7 @@ void send_key_event( const char* keycode , int keydown )
 	}
 
 	printf("CODE: %x\nLULZ: %s\n",code, XKeysymToString(XKeycodeToKeysym(d,code,0)));
-	// (display , keycode , is_pressed , delay )
+	/* (display , keycode , is_pressed , delay ) */
 	XTestFakeKeyEvent(d, code , keydown , 0);
 	XFlush(d);
 }
