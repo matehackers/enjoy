@@ -40,8 +40,6 @@ local function new_command_table()
 end
 
 -- TODO should be moved to some kind of config file
-base_dir = 'mapping/'
-current_file = base_dir .. 'example.lua'
 commands = new_command_table()
 
 local function do_event(x,state)
@@ -58,6 +56,11 @@ end
 -- receives joystick events and performs actions
 function __event_button(x,down)
 	do_event(x, down and 'down' or 'up')
+end
+
+function __set_mapping_file(file)
+	current_file = file
+	dofile(current_file)
 end
 
 -- TODO: document the API
@@ -203,6 +206,3 @@ function report(commands)
 
 	notify_real(note)
 end
-
-
-dofile(current_file)

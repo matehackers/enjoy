@@ -113,10 +113,21 @@ void printJoyInfo()
 	}
 }
 
+void setMappingFile(lua_State *L, const char* mappingFile)
+{
+	lua_getglobal(L,"__set_mapping_file");
+	lua_pushstring(L, mappingFile);
+
+	if(lua_pcall(L, 1, 0, 0) != 0) {
+		luaL_error(L,"%s\n",lua_tostring(L, -1));
+	}
+}
 
 int main(int argc, char** argv) {
 
 	/* TODO print usage and parameters */
+
+	const char* mappingFile = "example.lua";
 
 	init();
 
@@ -131,17 +142,19 @@ int main(int argc, char** argv) {
 		exit(1);
 	}
 
+	if (argc == 3)
+		mappingFile = argv[2];
+
 	openJoystick(selected);
+
 	lua_State *L = openLua();
 
 	/* TODO have core.lua as a precompiled binary */
 	loadLuaFile(L,"core.lua");
 
-	/* lua_register(L, "__send_key_event" , lua_send_key_event ); */
+	setMappingFile(L, mappingFile);
 
 	handleEvents(L);
 
 	return 0;
-
 }
-

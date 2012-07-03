@@ -73,10 +73,8 @@ the mapping/hydrogen.lua and mapping/drum.lua files.
 
 I intend to implement this in the future, if I have the motivation
 
-* Pass mapping file in the command line
 * getoptlong parameters and -h documentation
 * Ability to give buttons names for easy reference
-* Support for joystick axis mapping
 * Proper API documentation for the Lua geeks :B and another one for normal people
 * True support for sending key events (that works transparently in all platforms)
 * True support for notifications (even though portability is hard here)
