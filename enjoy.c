@@ -45,7 +45,6 @@ void handleEvents(lua_State* L)
 				break;
 
 				case SDL_JOYAXISMOTION:
-					printf("axes\n");
 					break;
 
 			}

@@ -15,13 +15,16 @@ language and strives to be rapidly readable and writable by humans!
 Right now it only works under Linux, because that's where I'm using it. I swear I'll try hard to get
 Windows, Mac and other *nixes, cuz I want people to use this (if they find it usefull).
 
+### UPDATE
+
+It now uses SDL so it should be compilable everywhere it's available. Windows binaries will be provided.
+
 ## Running
 
 This is an evil dev release as of now... you have to type `make` to compile and then `./enjoy` to run.
 
-It will recognize `/dev/input/js0` as default, but another one can be passed as a parameter at startup:
-
-    ./enjoy /dev/input/js1 #or maybe some other esoteric device path
+When ran with no parameters it will list all connected joysticks, you can then run it with a joystick number
+to get normal functionality.
 
 ## Writing your own mapping files
 
@@ -53,9 +56,9 @@ Many important things here. To start the mapping you need to use the button dire
 
 * **cmd**: Can be given a command to be executed in the operating system shell
 
-* **toggle**: Similar to `cmd`, but should be used whit two commands as toggle switch.
+* **toggle**: Similar to `cmd`, but should be used with two commands as toggle switch.
 
-* **explain**: Here you may write explanation of what this button is doing
+* **explain**: Here you may write an explanation of what this button is doing
 
 * **load**: Can be used to change the set of commands being used, just give it the name of the new file. If it's given 'self' it reloads the file instead. By default files are looked up in the `mapping` directory (and that can't be changed in a pretty way for now)
 
@@ -70,11 +73,14 @@ the mapping/hydrogen.lua and mapping/drum.lua files.
 
 I intend to implement this in the future, if I have the motivation
 
+* Pass mapping file in the command line
+* getoptlong parameters and -h documentation
+* Ability to give buttons names for easy reference
+* Support for joystick axis mapping
 * Proper API documentation for the Lua geeks :B and another one for normal people
 * True support for sending key events (that works transparently in all platforms)
 * True support for notifications (even though portability is hard here)
 * Run a command if a button is held
 * Run commands with button combinations (1+2 for example)
-* Support for joystick axis mapping
 * A nice GUI to query the button IDs and make crafting the mapping files easier
-
+* Send events through the network with OSC
