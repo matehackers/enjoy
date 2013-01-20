@@ -1,6 +1,6 @@
 button '1'
 	explain 'Go to menu'
-	load 'menu.lua'
+	load 'mapping/menu.lua'
 
 button '3'
 	explain 'Open Firefox'

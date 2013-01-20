@@ -73,6 +73,7 @@ the mapping/hydrogen.lua and mapping/drum.lua files.
 
 I intend to implement this in the future, if I have the motivation
 
+* Tests
 * getoptlong parameters and -h documentation
 * Ability to give buttons names for easy reference
 * Proper API documentation for the Lua geeks :B and another one for normal people

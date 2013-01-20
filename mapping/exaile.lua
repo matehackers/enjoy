@@ -28,5 +28,5 @@ button '8'
 
 button '9'
 	explain 'Go to menu'
-	load 'menu.lua'
+	load 'mapping/menu.lua'
 

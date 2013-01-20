@@ -1,18 +1,18 @@
 button '2'
 	explain 'Go to exaile controls'
-	load 'exaile.lua'
+	load 'mapping/exaile.lua'
 
 button '3'
 	explain 'Control Audacity'
-	load 'audacity.lua'
+	load 'mapping/audacity.lua'
 
 button '0'
 	explain 'Hydrogen Drums'
-	load 'hydrogen.lua'
+	load 'mapping/hydrogen.lua'
 
 button '4'
 	explain 'Play Drums!'
-	load 'drums.lua'
+	load 'mapping/drums.lua'
 
 button '5'
 

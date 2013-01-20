@@ -77,6 +77,8 @@ end
 local function construct_cmd(param)
 	local ret = nil
 
+	-- TODO, needs asserts
+	-- TODO, recurssive call to construct_cmd?
 	if type(param) == 'table' then
 		-- already ready and formated like a
 		-- table with button (down|up) functions, we hope
@@ -157,7 +159,7 @@ function load(filename,nodoc)
 	cmd ( function ()
 			commands = new_command_table()
 
-			if filename ~= 'self' then current_file = base_dir .. filename end
+			if filename ~= 'self' then current_file = filename end
 			dofile(current_file)
 			print('Loaded ' .. current_file)
 
